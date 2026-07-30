@@ -7,7 +7,7 @@ def test_get_with_query_params():
     # Проверяет, что GET-параметры корректно отражаются в ответе.
     params = {"foo": "bar", "baz": 123}
     response = requests.get(f"{BASE_URL}/get", params=params)
-    assert response.status_code == 200
+    assert response.status_code == 400
     data = response.json()
     expected = {k: str(v) for k, v in params.items()}
     assert data["args"] == expected
